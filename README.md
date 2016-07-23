@@ -1,5 +1,5 @@
 # Photosphere.PeParser
-Parsing of .NET assemblies from PE files.
+Parsing of .NET assemblies from PE files. Not finished yet!
 
 ## Status
 [![Build Status](https://ci.appveyor.com/api/projects/status/github/sunloving/photosphere-peparser?retina=true&svg=true)](https://ci.appveyor.com/project/sunloving/photosphere-peparser)

@@ -34,6 +34,11 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Attributes\AssemblyLevelAttribute.cs" />
+    <Compile Include="Bar.cs" />
+    <Compile Include="Foo.cs" />
+    <Compile Include="IFoo.cs" />
+    <Compile Include="Attributes\MethodLevelAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

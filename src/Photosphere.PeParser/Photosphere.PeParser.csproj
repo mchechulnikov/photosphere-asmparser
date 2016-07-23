@@ -34,6 +34,18 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Content\Headers\PeNtFields.cs" />
+    <Compile Include="Content\Headers\PeStandartFields.cs" />
+    <Compile Include="Content\DataDirectories.cs" />
+    <Compile Include="Content\Headers\DosHeader.cs" />
+    <Compile Include="Content\IDataDirectories.cs" />
+    <Compile Include="IDotNetAssemblyParser.cs" />
+    <Compile Include="IPeFileParser.cs" />
+    <Compile Include="Content\Headers\PeFields.cs" />
+    <Compile Include="Content\Headers\PeFileHeader.cs" />
+    <Compile Include="Content\Headers\PeSignature.cs" />
+    <Compile Include="Content\Headers\SectionHeader.cs" />
+    <Compile Include="IPeFileContent.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

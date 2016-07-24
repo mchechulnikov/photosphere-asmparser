@@ -39,6 +39,8 @@
     <Compile Include="FileSystem\FileReader.cs" />
     <Compile Include="FileSystem\IFileReader.cs" />
     <Compile Include="Parsers\DosHeaderParser.cs" />
+    <Compile Include="Parsers\IParser.cs" />
+    <Compile Include="Parsers\PeHeaderParser.cs" />
     <Compile Include="PeContent\Headers\PeNtFields.cs" />
     <Compile Include="PeContent\Headers\PeStandartFields.cs" />
     <Compile Include="PeContent\DataDirectories.cs" />
@@ -47,7 +49,7 @@
     <Compile Include="IDotNetAssemblyParser.cs" />
     <Compile Include="IPeFileParser.cs" />
     <Compile Include="PeContent\Headers\PeFields.cs" />
-    <Compile Include="PeContent\Headers\PeFileHeader.cs" />
+    <Compile Include="PeContent\Headers\PeHeader.cs" />
     <Compile Include="PeContent\Headers\PeSignature.cs" />
     <Compile Include="PeContent\Headers\SectionHeader.cs" />
     <Compile Include="IPeFileContent.cs" />

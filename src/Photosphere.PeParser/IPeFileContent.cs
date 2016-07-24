@@ -8,7 +8,7 @@ namespace Photosphere.PeParser
         DosHeader DosHeader { get; }
         string DosStub { get; }
         PeSignature PeSignature { get; }
-        PeFileHeader PeFileHeader { get; }
+        PeHeader PeHeader { get; }
         PeFields PeFields { get; }
         IDataDirectories DataDirectories { get; }
     }

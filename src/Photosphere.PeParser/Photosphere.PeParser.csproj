@@ -46,6 +46,9 @@
     <Compile Include="Content\Headers\PeSignature.cs" />
     <Compile Include="Content\Headers\SectionHeader.cs" />
     <Compile Include="IPeFileContent.cs" />
+    <Compile Include="IPeFileReader.cs" />
+    <Compile Include="IPeFileValidator.cs" />
+    <Compile Include="PeFile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

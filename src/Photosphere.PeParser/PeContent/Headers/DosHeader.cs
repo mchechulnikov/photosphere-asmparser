@@ -2,14 +2,11 @@
 {
     public class DosHeader
     {
-        public DosHeader(byte[] content, int peOffcet)
+        public DosHeader(uint peOffcet)
         {
-            Content = content;
             PeOffcet = peOffcet;
         }
 
-        public byte[] Content { get; }
-
-        public int PeOffcet { get; }
+        public uint PeOffcet { get; }
     }
 }

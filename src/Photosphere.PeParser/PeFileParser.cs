@@ -8,20 +8,24 @@ namespace Photosphere.PeParser
     {
         private readonly IFileReader _fileReader;
         private readonly IParser<DosHeader> _dosHeaderParser;
+        private readonly IParser<PeHeader> _peHeaderParser;
 
         public PeFileParser()
         {
             _fileReader = new FileReader();
             _dosHeaderParser = new DosHeaderParser();
+            _peHeaderParser = new PeHeaderParser();
         }
 
         public IPeFileContent Parse(string filePath)
         {
             var file = _fileReader.Read(filePath);
             // TODO
+            var dosHeader = _dosHeaderParser.Parse(file);
             return new PeFileContent
             {
-                DosHeader = _dosHeaderParser.Parse(file),
+                DosHeader = dosHeader,
+                PeHeader = _peHeaderParser.Parse(file, dosHeader.PeOffcet),
             };
         }
     }

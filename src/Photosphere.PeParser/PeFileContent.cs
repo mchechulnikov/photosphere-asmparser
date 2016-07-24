@@ -6,7 +6,6 @@ namespace Photosphere.PeParser
     internal class PeFileContent : IPeFileContent
     {
         public DosHeader DosHeader { get; set; }
-        public string DosStub { get; set; }
         public PeSignature PeSignature { get; set; }
         public PeHeader PeHeader { get; set; }
         public PeFields PeFields { get; set; }

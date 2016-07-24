@@ -1,4 +1,4 @@
-﻿namespace Photosphere.PeParser.Content
+﻿namespace Photosphere.PeParser.PeContent
 {
     public interface IDataDirectories
     {

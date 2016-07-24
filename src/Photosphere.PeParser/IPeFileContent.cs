@@ -1,5 +1,5 @@
-﻿using Photosphere.PeParser.Content;
-using Photosphere.PeParser.Content.Headers;
+﻿using Photosphere.PeParser.PeContent;
+using Photosphere.PeParser.PeContent.Headers;
 
 namespace Photosphere.PeParser
 {

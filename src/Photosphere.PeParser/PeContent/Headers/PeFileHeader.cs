@@ -1,4 +1,4 @@
-﻿namespace Photosphere.PeParser.Content.Headers
+﻿namespace Photosphere.PeParser.PeContent.Headers
 {
     public class PeFileHeader
     {

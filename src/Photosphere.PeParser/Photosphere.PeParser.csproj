@@ -34,23 +34,29 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Content\Headers\PeNtFields.cs" />
-    <Compile Include="Content\Headers\PeStandartFields.cs" />
-    <Compile Include="Content\DataDirectories.cs" />
-    <Compile Include="Content\Headers\DosHeader.cs" />
-    <Compile Include="Content\IDataDirectories.cs" />
+    <Compile Include="Extensions\ArrayExtensions.cs" />
+    <Compile Include="Extensions\ByteArrayExtensions.cs" />
+    <Compile Include="FileSystem\FileReader.cs" />
+    <Compile Include="FileSystem\IFileReader.cs" />
+    <Compile Include="Parsers\DosHeaderParser.cs" />
+    <Compile Include="PeContent\Headers\PeNtFields.cs" />
+    <Compile Include="PeContent\Headers\PeStandartFields.cs" />
+    <Compile Include="PeContent\DataDirectories.cs" />
+    <Compile Include="PeContent\Headers\DosHeader.cs" />
+    <Compile Include="PeContent\IDataDirectories.cs" />
     <Compile Include="IDotNetAssemblyParser.cs" />
     <Compile Include="IPeFileParser.cs" />
-    <Compile Include="Content\Headers\PeFields.cs" />
-    <Compile Include="Content\Headers\PeFileHeader.cs" />
-    <Compile Include="Content\Headers\PeSignature.cs" />
-    <Compile Include="Content\Headers\SectionHeader.cs" />
+    <Compile Include="PeContent\Headers\PeFields.cs" />
+    <Compile Include="PeContent\Headers\PeFileHeader.cs" />
+    <Compile Include="PeContent\Headers\PeSignature.cs" />
+    <Compile Include="PeContent\Headers\SectionHeader.cs" />
     <Compile Include="IPeFileContent.cs" />
-    <Compile Include="IPeFileReader.cs" />
-    <Compile Include="IPeFileValidator.cs" />
-    <Compile Include="PeFile.cs" />
+    <Compile Include="PeFileContent.cs" />
+    <Compile Include="PeFileParser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="FileSystem\TargetFile.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

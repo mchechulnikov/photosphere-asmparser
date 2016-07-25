@@ -1,14 +1,24 @@
-using Photosphere.PeParser.PeContent;
-using Photosphere.PeParser.PeContent.Headers;
+using System;
+using System.Collections.Generic;
 
 namespace Photosphere.PeParser
 {
     internal class PeFileContent : IPeFileContent
     {
-        public DosHeader DosHeader { get; set; }
-        public PeSignature PeSignature { get; set; }
-        public PeHeader PeHeader { get; set; }
-        public PeFields PeFields { get; set; }
-        public IDataDirectories DataDirectories { get; set; }
+        IEnumerable<byte> IPeFileContent.DosHeader
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        IEnumerable<byte> IPeFileContent.PeHeader
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+        }
     }
 }

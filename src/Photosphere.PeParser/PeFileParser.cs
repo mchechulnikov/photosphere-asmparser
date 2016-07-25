@@ -1,3 +1,4 @@
+using System;
 using Photosphere.PeParser.FileSystem;
 using Photosphere.PeParser.Parsers;
 using Photosphere.PeParser.PeContent.Headers;
@@ -22,11 +23,12 @@ namespace Photosphere.PeParser
             var file = _fileReader.Read(filePath);
             // TODO
             var dosHeader = _dosHeaderParser.Parse(file);
-            return new PeFileContent
-            {
-                DosHeader = dosHeader,
-                PeHeader = _peHeaderParser.Parse(file, dosHeader.PeOffcet),
-            };
+            //return new PeFileContent
+            //{
+            //    DosHeader = dosHeader,
+            //    PeHeader = _peHeaderParser.Parse(file, dosHeader.PeOffcet),
+            //};
+            throw new NotImplementedException();
         }
     }
 }

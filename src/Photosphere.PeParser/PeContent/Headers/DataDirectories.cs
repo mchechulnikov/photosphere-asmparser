@@ -1,6 +1,6 @@
-﻿namespace Photosphere.PeParser.PeContent
+﻿namespace Photosphere.PeParser.PeContent.Headers
 {
-    internal class DataDirectories : IDataDirectories
+    internal class DataDirectories
     {
         public byte[] TextSectionHeader { get; set; }
 

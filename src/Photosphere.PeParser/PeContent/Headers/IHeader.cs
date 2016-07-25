@@ -1,6 +1,6 @@
 ﻿namespace Photosphere.PeParser.PeContent.Headers
 {
-    public class PeSignature
+    public interface IHeader : IPeFilePart
     {
         
     }

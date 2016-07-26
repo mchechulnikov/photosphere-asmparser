@@ -3,37 +3,49 @@ using System.IO;
 
 namespace Photosphere.PeParser
 {
-    public class DotNetAssemblyParser
+    public class DotNetAssemblyParser : IDisposable
     {
-        public static byte[] GetMethod(string filePath)
+        private readonly string _filePath;
+        private readonly BinaryFileReader _reader;
+
+        public DotNetAssemblyParser(string filePath)
         {
-            var binaryReader = new BinaryReader(File.OpenRead(filePath));
+            _filePath = filePath;
+            _reader = new BinaryFileReader(filePath);
 
-            Check(binaryReader);
-
-            return null;
+            ValidateFile();
         }
 
-        private static void Check(BinaryReader binaryReader)
+        public byte[] GetMethod()
         {
-            if (binaryReader.BaseStream.Length < 128)
+            throw new NotImplementedException();
+        }
+
+        private void ValidateFile()
+        {
+            if (_reader.Length < 128)
             {
                 throw new InvalidOperationException("Invalid file length");
             }
 
-            if (binaryReader.ReadUInt16() != 0x5a4d)
+            if (_reader.ReadWord() != 0x4d5a)
             {
                 throw new InvalidOperationException("Invalid DOS header");
             }
 
-            binaryReader.BaseStream.Seek(58, SeekOrigin.Current);
-            var peOffset = binaryReader.ReadUInt32();
-            binaryReader.BaseStream.Seek(peOffset, SeekOrigin.Begin);
+            _reader.ForwardOn(58);
+            var peOffset = _reader.ReadDword();
+            _reader.MoveTo(peOffset);
 
-            if (binaryReader.ReadUInt32() != 0x00004550)
+            if (_reader.ReadDword() != 0x50450000)
             {
                 throw new InvalidOperationException("Invalid PE header");
             }
+        }
+
+        public void Dispose()
+        {
+            _reader.Dispose();
         }
     }
 }

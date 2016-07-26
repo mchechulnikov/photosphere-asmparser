@@ -9,8 +9,10 @@ namespace Photosphere.PeParser.IntegrationTests
         [Fact]
         internal void Parse_ValidFile_ValidResult()
         {
-            DotNetAssemblyParser.GetMethod(FilePath);
-            Assert.True(true);
+            using (var parser = new DotNetAssemblyParser(FilePath))
+            {
+                Assert.NotNull(parser);
+            }
         }
     }
 }

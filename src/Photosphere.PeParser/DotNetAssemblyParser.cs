@@ -1,10 +1,12 @@
 ﻿using System;
-using System.IO;
 
 namespace Photosphere.PeParser
 {
     public class DotNetAssemblyParser : IDisposable
     {
+        private readonly Word _dosHeaderMagic = new Word(0x4d5a);
+        private readonly Dword _peSignature = new Dword(0x50450000);
+
         private readonly string _filePath;
         private readonly BinaryFileReader _reader;
 
@@ -16,11 +18,6 @@ namespace Photosphere.PeParser
             ValidateFile();
         }
 
-        public byte[] GetMethod()
-        {
-            throw new NotImplementedException();
-        }
-
         private void ValidateFile()
         {
             if (_reader.Length < 128)
@@ -28,7 +25,7 @@ namespace Photosphere.PeParser
                 throw new InvalidOperationException("Invalid file length");
             }
 
-            if (_reader.ReadWord() != 0x4d5a)
+            if (_reader.ReadWord() != _dosHeaderMagic)
             {
                 throw new InvalidOperationException("Invalid DOS header");
             }
@@ -37,7 +34,7 @@ namespace Photosphere.PeParser
             var peOffset = _reader.ReadDword();
             _reader.MoveTo(peOffset);
 
-            if (_reader.ReadDword() != 0x50450000)
+            if (_reader.ReadDword() != _peSignature)
             {
                 throw new InvalidOperationException("Invalid PE header");
             }

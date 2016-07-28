@@ -1,19 +1,8 @@
 using System;
 using System.IO;
-using System.Linq;
 
 namespace Photosphere.PeParser
 {
-    internal struct Word
-    {
-        private byte[] _bytes;
-
-        public Word(byte[] bytes)
-        {
-            _bytes = bytes;
-        }
-    }
-
     internal class BinaryFileReader : IDisposable
     {
         private readonly BinaryReader _binaryReader;
@@ -33,28 +22,27 @@ namespace Photosphere.PeParser
 
         public void MoveTo(uint offset)
         {
-            BitConverter.
             _binaryReader.BaseStream.Seek(offset, SeekOrigin.Begin);
         }
 
-        public ushort ReadWord()
+        public Word ReadWord()
         {
             var bytes = _binaryReader.ReadBytes(2);
             if (BitConverter.IsLittleEndian)
             {
                 Array.Reverse(bytes);
             }
-            return BitConverter.ToUInt16(bytes, 0);
+            return new Word(bytes);
         }
 
-        public uint ReadDword()
+        public Dword ReadDword()
         {
             var bytes = _binaryReader.ReadBytes(4);
             if (BitConverter.IsLittleEndian)
             {
                 Array.Reverse(bytes);
             }
-            return BitConverter.ToUInt32(bytes, 0);
+            return new Dword(bytes);
         }
 
         public void Dispose()

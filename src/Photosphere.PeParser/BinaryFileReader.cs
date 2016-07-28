@@ -28,26 +28,28 @@ namespace Photosphere.PeParser
         public Word ReadWord()
         {
             var bytes = _binaryReader.ReadBytes(2);
-            if (BitConverter.IsLittleEndian)
-            {
-                Array.Reverse(bytes);
-            }
+            RepresentInDirectOrder(bytes);
             return new Word(bytes);
         }
 
         public Dword ReadDword()
         {
             var bytes = _binaryReader.ReadBytes(4);
-            if (BitConverter.IsLittleEndian)
-            {
-                Array.Reverse(bytes);
-            }
+            RepresentInDirectOrder(bytes);
             return new Dword(bytes);
         }
 
         public void Dispose()
         {
             _binaryReader.Dispose();
+        }
+
+        private static void RepresentInDirectOrder(byte[] bytes)
+        {
+            if (BitConverter.IsLittleEndian)
+            {
+                Array.Reverse(bytes);
+            }
         }
     }
 }

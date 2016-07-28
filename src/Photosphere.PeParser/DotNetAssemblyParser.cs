@@ -6,6 +6,8 @@ namespace Photosphere.PeParser
     {
         private readonly Word _dosHeaderMagic = new Word(0x4d5a);
         private readonly Dword _peSignature = new Dword(0x50450000);
+        private const int LfNewOffset = 58;
+        private const int MinDotNetAssemblyFileLength = 128;
 
         private readonly string _filePath;
         private readonly BinaryFileReader _reader;
@@ -20,7 +22,7 @@ namespace Photosphere.PeParser
 
         private void ValidateFile()
         {
-            if (_reader.Length < 128)
+            if (_reader.Length < MinDotNetAssemblyFileLength)
             {
                 throw new InvalidOperationException("Invalid file length");
             }
@@ -30,7 +32,7 @@ namespace Photosphere.PeParser
                 throw new InvalidOperationException("Invalid DOS header");
             }
 
-            _reader.ForwardOn(58);
+            _reader.ForwardOn(LfNewOffset);
             var peOffset = _reader.ReadDword();
             _reader.MoveTo(peOffset);
 

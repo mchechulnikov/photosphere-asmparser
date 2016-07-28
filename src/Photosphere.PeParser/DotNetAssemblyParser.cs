@@ -19,7 +19,14 @@ namespace Photosphere.PeParser
             _filePath = filePath;
             _reader = new BinaryFileReader(filePath);
 
-            ValidateFile();
+            try
+            {
+                ValidateFile();
+            }
+            finally
+            {
+                _reader.Dispose();
+            }
         }
 
         private void ValidateFile()

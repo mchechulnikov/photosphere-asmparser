@@ -52,6 +52,7 @@
   <ItemGroup>
     <Compile Include="DotNetAssemblyParserTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestUtils\TemporaryFile.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

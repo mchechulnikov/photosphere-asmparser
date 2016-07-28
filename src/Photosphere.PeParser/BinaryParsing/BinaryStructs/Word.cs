@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Photosphere.PeParser
+namespace Photosphere.PeParser.BinaryParsing.BinaryStructs
 {
     internal struct Word
     {
@@ -33,5 +33,21 @@ namespace Photosphere.PeParser
         public static bool operator !=(Word first, Word second) => !(first == second);
 
         public static bool operator !=(Word first, uint second) => !(first == second);
+
+        public bool Equals(Word other) => _byte1 == other._byte1 && _byte2 == other._byte2;
+
+        public override bool Equals(object obj)
+        {
+            if (ReferenceEquals(null, obj)) return false;
+            return obj is Word && Equals((Word)obj);
+        }
+
+        public override int GetHashCode()
+        {
+            unchecked
+            {
+                return (_byte1.GetHashCode() * 397) ^ _byte2.GetHashCode();
+            }
+        }
     }
 }

@@ -1,4 +1,6 @@
 ﻿using System;
+using Photosphere.PeParser.BinaryParsing;
+using Photosphere.PeParser.BinaryParsing.BinaryStructs;
 
 namespace Photosphere.PeParser
 {

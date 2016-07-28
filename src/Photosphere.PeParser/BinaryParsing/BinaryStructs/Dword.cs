@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Photosphere.PeParser
+namespace Photosphere.PeParser.BinaryParsing.BinaryStructs
 {
     internal struct Dword
     {
@@ -50,6 +50,30 @@ namespace Photosphere.PeParser
         public static implicit operator uint(Dword dword)
         {
             return (uint) dword._byte1 | dword._byte2 | dword._byte3 | dword._byte4;
+        }
+
+        public bool Equals(Dword other) =>
+            _byte1 == other._byte1 &&
+            _byte2 == other._byte2 &&
+            _byte3 == other._byte3 &&
+            _byte4 == other._byte4;
+
+        public override bool Equals(object obj)
+        {
+            if (ReferenceEquals(null, obj)) return false;
+            return obj is Dword && Equals((Dword)obj);
+        }
+
+        public override int GetHashCode()
+        {
+            unchecked
+            {
+                var hashCode = _byte1.GetHashCode();
+                hashCode = (hashCode * 397) ^ _byte2.GetHashCode();
+                hashCode = (hashCode * 397) ^ _byte3.GetHashCode();
+                hashCode = (hashCode * 397) ^ _byte4.GetHashCode();
+                return hashCode;
+            }
         }
     }
 }

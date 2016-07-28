@@ -1,7 +1,8 @@
 using System;
 using System.IO;
+using Photosphere.PeParser.BinaryParsing.BinaryStructs;
 
-namespace Photosphere.PeParser
+namespace Photosphere.PeParser.BinaryParsing
 {
     internal class BinaryFileReader : IDisposable
     {

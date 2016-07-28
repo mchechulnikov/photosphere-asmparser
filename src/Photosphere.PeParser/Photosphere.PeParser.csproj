@@ -34,11 +34,11 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BinaryFileReader.cs" />
+    <Compile Include="BinaryParsing\BinaryFileReader.cs" />
     <Compile Include="DotNetAssemblyParser.cs" />
-    <Compile Include="Dword.cs" />
+    <Compile Include="BinaryParsing\BinaryStructs\Dword.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Word.cs" />
+    <Compile Include="BinaryParsing\BinaryStructs\Word.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

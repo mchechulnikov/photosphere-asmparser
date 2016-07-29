@@ -23,7 +23,7 @@ namespace Photosphere.PeParser
             {
                 ValidateFile();
             }
-            catch (InvalidOperationException)
+            catch (Exception)
             {
                 _reader.Dispose();
                 throw;

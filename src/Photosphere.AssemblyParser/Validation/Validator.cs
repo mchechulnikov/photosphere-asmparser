@@ -13,9 +13,14 @@ namespace Photosphere.AssemblyParser.Validation
 
         private readonly BinaryFileReader _reader;
 
-        public Validator(BinaryFileReader reader)
+        private Validator(BinaryFileReader reader)
         {
             _reader = reader;
+        }
+
+        public static void Validate(BinaryFileReader reader)
+        {
+            new Validator(reader).Validate();
         }
 
         public void Validate()

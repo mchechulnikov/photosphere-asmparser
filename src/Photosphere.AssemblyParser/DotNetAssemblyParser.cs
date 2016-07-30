@@ -12,7 +12,7 @@ namespace Photosphere.AssemblyParser
         {
             _reader = new BinaryFileReader(filePath);
 
-            new Validator(_reader).Validate();
+            Validator.Validate(_reader);
         }
 
         public void Dispose()

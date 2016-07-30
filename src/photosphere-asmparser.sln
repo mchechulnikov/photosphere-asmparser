@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.25428.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Photosphere.AssemblyParser", "Photosphere.AssemblyParser\Photosphere.AssemblyParser.csproj", "{0AEFDDF9-4695-4C41-94A4-C213B7304E58}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Photosphere.AssemblyParser.IntegrationTests", "Photosphere.AssemblyParser.IntegrationTests\Photosphere.AssemblyParser.IntegrationTests.csproj", "{B7833E5F-8147-4B40-82F2-3E365B802062}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Photosphere.AssemblyParser.TestAssembly", "Photosphere.AssemblyParser.TestAssembly\Photosphere.AssemblyParser.TestAssembly.csproj", "{C81FB662-1D7A-42DC-9157-A849A809B3E0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0AEFDDF9-4695-4C41-94A4-C213B7304E58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AEFDDF9-4695-4C41-94A4-C213B7304E58}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0AEFDDF9-4695-4C41-94A4-C213B7304E58}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0AEFDDF9-4695-4C41-94A4-C213B7304E58}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7833E5F-8147-4B40-82F2-3E365B802062}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7833E5F-8147-4B40-82F2-3E365B802062}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7833E5F-8147-4B40-82F2-3E365B802062}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7833E5F-8147-4B40-82F2-3E365B802062}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C81FB662-1D7A-42DC-9157-A849A809B3E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C81FB662-1D7A-42DC-9157-A849A809B3E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C81FB662-1D7A-42DC-9157-A849A809B3E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C81FB662-1D7A-42DC-9157-A849A809B3E0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -7,8 +7,8 @@ configuration: Release
 
 environment:
   sourcesFolder: src
-  solutionName: photosphere-peparser.sln
-  projectName: Photosphere.PeParser
+  solutionName: photosphere-asmparser.sln
+  projectName: Photosphere.AssemblyParser
 
 assembly_info:
   patch: true
@@ -28,7 +28,7 @@ before_build:
   - ps: $nuspec.Save($nuspecPath)
 
 build:
-  verbosity: minimal  
+  verbosity: minimal
   project: $(sourcesFolder)\$(solutionName)
   publish_nuget: true
   publish_nuget_symbols: true

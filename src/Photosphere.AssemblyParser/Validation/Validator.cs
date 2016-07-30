@@ -23,7 +23,7 @@ namespace Photosphere.AssemblyParser.Validation
             new Validator(reader).Validate();
         }
 
-        public void Validate()
+        private void Validate()
         {
             try
             {

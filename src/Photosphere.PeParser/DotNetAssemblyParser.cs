@@ -5,12 +5,11 @@ using Photosphere.PeParser.Validation;
 namespace Photosphere.PeParser
 {
     public class DotNetAssemblyParser : IDisposable
-    {private readonly string _filePath;
+    {
         private readonly BinaryFileReader _reader;
 
         public DotNetAssemblyParser(string filePath)
         {
-            _filePath = filePath;
             _reader = new BinaryFileReader(filePath);
 
             new Validator(_reader).Validate();

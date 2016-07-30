@@ -1,6 +1,7 @@
 using System;
 using System.IO;
 using Photosphere.PeParser.BinaryParsing.BinaryStructs;
+using Photosphere.PeParser.Extensions;
 
 namespace Photosphere.PeParser.BinaryParsing
 {
@@ -10,9 +11,12 @@ namespace Photosphere.PeParser.BinaryParsing
 
         public BinaryFileReader(string filePath)
         {
+            FilePath = filePath;
             var fileStream = File.OpenRead(filePath);
             _binaryReader = new BinaryReader(fileStream);
         }
+
+        public string FilePath { get; }
 
         public long Length => _binaryReader.BaseStream.Length;
 
@@ -21,36 +25,28 @@ namespace Photosphere.PeParser.BinaryParsing
             _binaryReader.BaseStream.Seek(offset, SeekOrigin.Current);
         }
 
-        public void MoveTo(uint offset)
+        public void MoveTo(uint position)
         {
-            _binaryReader.BaseStream.Seek(offset, SeekOrigin.Begin);
+            _binaryReader.BaseStream.Seek(position, SeekOrigin.Begin);
         }
 
         public Word ReadWord()
         {
             var bytes = _binaryReader.ReadBytes(2);
-            RepresentInDirectOrder(bytes);
+            bytes.RepresentInDirectOrder();
             return new Word(bytes);
         }
 
         public Dword ReadDword()
         {
             var bytes = _binaryReader.ReadBytes(4);
-            RepresentInDirectOrder(bytes);
+            bytes.RepresentInDirectOrder();
             return new Dword(bytes);
         }
 
         public void Dispose()
         {
             _binaryReader.Dispose();
-        }
-
-        private static void RepresentInDirectOrder(byte[] bytes)
-        {
-            if (BitConverter.IsLittleEndian)
-            {
-                Array.Reverse(bytes);
-            }
         }
     }
 }

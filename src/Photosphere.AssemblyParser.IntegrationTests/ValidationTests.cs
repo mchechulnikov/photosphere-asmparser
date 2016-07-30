@@ -11,7 +11,7 @@ namespace Photosphere.AssemblyParser.IntegrationTests
         {
             using (new RandomTemporaryFile(511))
             {
-                Assert.Throws<InvalidBinaryFileLengthException>(() => new DotNetAssemblyParser(TemporaryFile.Path));
+                Assert.Throws<InvalidBinaryFileLengthException>(() => new AssemblyParser(TemporaryFile.Path));
             }
         }
 
@@ -20,7 +20,7 @@ namespace Photosphere.AssemblyParser.IntegrationTests
         {
             using (new InvalidDosTemporaryFile())
             {
-                Assert.Throws<InvalidDosFileHeaderException>(() => new DotNetAssemblyParser(TemporaryFile.Path));
+                Assert.Throws<InvalidDosFileHeaderException>(() => new AssemblyParser(TemporaryFile.Path));
             }
         }
 
@@ -29,7 +29,7 @@ namespace Photosphere.AssemblyParser.IntegrationTests
         {
             using (new InvalidPeTemporaryFile())
             {
-                Assert.Throws<InvalidPeFileHeaderException>(() => new DotNetAssemblyParser(TemporaryFile.Path));
+                Assert.Throws<InvalidPeFileHeaderException>(() => new AssemblyParser(TemporaryFile.Path));
             }
         }
     }

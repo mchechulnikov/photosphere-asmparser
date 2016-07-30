@@ -9,7 +9,7 @@ namespace Photosphere.AssemblyParser.IntegrationTests
         [Fact]
         internal void Parse_ValidFile_ValidResult()
         {
-            using (var parser = new DotNetAssemblyParser(FilePath))
+            using (var parser = new AssemblyParser(FilePath))
             {
                 Assert.NotNull(parser);
             }

@@ -1,14 +1,13 @@
-﻿using System;
-using Photosphere.AssemblyParser.BinaryParsing;
+﻿using Photosphere.AssemblyParser.BinaryParsing;
 using Photosphere.AssemblyParser.Validation;
 
 namespace Photosphere.AssemblyParser
 {
-    public class DotNetAssemblyParser : IDisposable
+    public class AssemblyParser : IAssemblyParser
     {
         private readonly BinaryFileReader _reader;
 
-        public DotNetAssemblyParser(string filePath)
+        public AssemblyParser(string filePath)
         {
             _reader = new BinaryFileReader(filePath);
 

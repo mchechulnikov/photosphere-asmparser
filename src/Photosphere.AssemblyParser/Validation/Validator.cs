@@ -42,13 +42,8 @@ namespace Photosphere.AssemblyParser.Validation
             ValidateDosHeader();
             var pePosition = GetPeOffset();
             ValidatePePosition(pePosition);
-
             _reader.MoveTo(pePosition);
-
-            if (_reader.ReadDword() != _peSignature)
-            {
-                throw new InvalidPeFileHeaderException(_reader.FilePath);
-            }
+            ValidatePeSignature();
         }
 
         private void ValidateLength()
@@ -78,6 +73,14 @@ namespace Photosphere.AssemblyParser.Validation
             if (pePosition >= MinDotNetAssemblyFileLength)
             {
                 throw new InvalidPePositionException(_reader.FilePath, pePosition);
+            }
+        }
+
+        private void ValidatePeSignature()
+        {
+            if (_reader.ReadDword() != _peSignature)
+            {
+                throw new InvalidPeFileHeaderException(_reader.FilePath);
             }
         }
     }

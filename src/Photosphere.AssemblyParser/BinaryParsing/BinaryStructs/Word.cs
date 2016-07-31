@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Photosphere.AssemblyParser.BinaryParsing.BinaryStructs
 {
-    internal struct Word
+    internal struct Word : IBinaryStruct
     {
         private readonly byte _byte1;
         private readonly byte _byte2;

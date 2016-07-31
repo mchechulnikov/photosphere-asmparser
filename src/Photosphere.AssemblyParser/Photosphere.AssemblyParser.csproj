@@ -34,15 +34,24 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AssemblyStructure\AssemblyAnatomy.cs" />
+    <Compile Include="AssemblyStructure\AssemblyPart.cs" />
+    <Compile Include="AssemblyStructure\BinarySize.cs" />
+    <Compile Include="AssemblyStructure\DataDirectory.cs" />
+    <Compile Include="AssemblyStructure\AssemblyPartName.cs" />
+    <Compile Include="AssemblyStructure\PeHeader.cs" />
     <Compile Include="BinaryParsing\BinaryFileReader.cs" />
     <Compile Include="AssemblyParser.cs" />
     <Compile Include="BinaryParsing\BinaryStructs\Dword.cs" />
+    <Compile Include="BinaryParsing\BinaryStructs\IBinaryStruct.cs" />
+    <Compile Include="BinaryParsing\BinaryStructs\Qword.cs" />
     <Compile Include="Extensions\ByteArrayExtensions.cs" />
     <Compile Include="Extensions\IntExtensions.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="IAssemblyParser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="BinaryParsing\BinaryStructs\Word.cs" />
+    <Compile Include="Readers\HeadersReader.cs" />
     <Compile Include="Validation\Exceptions\InvalidBinaryFileLengthException.cs" />
     <Compile Include="Validation\Exceptions\InvalidDosFileHeaderException.cs" />
     <Compile Include="Validation\Exceptions\InvalidPeFileHeaderException.cs" />

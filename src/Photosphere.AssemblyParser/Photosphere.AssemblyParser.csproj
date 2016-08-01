@@ -34,6 +34,7 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AssemblyStructure\AssemblyPartHadler.cs" />
     <Compile Include="AssemblyStructure\AssemblyAnatomy.cs" />
     <Compile Include="AssemblyStructure\AssemblyPart.cs" />
     <Compile Include="AssemblyStructure\BinarySize.cs" />

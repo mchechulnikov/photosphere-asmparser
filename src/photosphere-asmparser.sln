@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Photosphere.AssemblyParser.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Photosphere.AssemblyParser.TestAssembly", "Photosphere.AssemblyParser.TestAssembly\Photosphere.AssemblyParser.TestAssembly.csproj", "{C81FB662-1D7A-42DC-9157-A849A809B3E0}"
 EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Photosphere.AssemblyParser.Anatomy", "Photosphere.AssemblyParser.Anatomy\Photosphere.AssemblyParser.Anatomy.fsproj", "{6E5D0926-F35B-45F0-9897-F70398E95452}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{C81FB662-1D7A-42DC-9157-A849A809B3E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C81FB662-1D7A-42DC-9157-A849A809B3E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C81FB662-1D7A-42DC-9157-A849A809B3E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E5D0926-F35B-45F0-9897-F70398E95452}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E5D0926-F35B-45F0-9897-F70398E95452}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E5D0926-F35B-45F0-9897-F70398E95452}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E5D0926-F35B-45F0-9897-F70398E95452}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
